@@ -1,0 +1,9 @@
+# Algoritmo 1: Ordenamiento rápido (Quick Sort) (O(n log n) en el caso promedio
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivote = arr[len(arr) // 2]
+    izquierda = [x for x in arr if x < pivote]
+    medio = [x for x in arr if x == pivote]
+    derecha = [x for x in arr if x > pivote]
+    return quick_sort(izquierda) + medio + quick_sort(derecha)
